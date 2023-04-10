@@ -21,5 +21,12 @@ pipeline {
                 }
             }
         }
+        stage("Pushing Image to DockerHub") {
+            steps {
+                script {
+                    sh 'docker push prafulladevi/swe645-project2:${DATETIME_TAG}'
+                }
+            }
+        }
     }
 }
